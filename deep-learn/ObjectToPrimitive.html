@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            toString() {
+                console.log("ToString called");
+                return '120';
+            },
+            valueOf() {
+                console.log("valueOf called");
+                // return '10';
+                return {};
+            }
+        }
+
+        console.log("Object is " +obj)
+    </script>
+</body>
+</html>
