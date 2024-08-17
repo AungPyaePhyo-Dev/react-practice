@@ -18,8 +18,28 @@
                 return {};
             }
         }
-
         console.log("Object is " +obj)
+
+        // Algorithm
+        /* 
+            valueOf => not primitive  ( priority high )
+                toString => return string
+                    string => number
+        */
+
+        let arr = [10,20];
+        console.log('arr ', arr.toString());
+        console.log('+arr ', +arr);
+
+        /* 
+            arr -> toString
+                '10,20' -> number
+                NaN
+        */
+
+        console.log('+10 ', +10);
+        console.log('+[] ', +[]);
+
     </script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var top = 10;
+        console.log(top === 10); // false => top is read only property of window ( global )
+
+        // But can declare in scope like this
+
+        function hello() {
+            var top = 10;
+            console.log(10 === top);
+        }
+
+        hello(); // true
+    </script>
+</body>
+</html>
