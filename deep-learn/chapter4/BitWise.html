@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Machine Learning || Image Processing တွေမှာသုံး / သာမာန် Bussiness Logic တွေမှာ မသုံး
+
+        let a = 3; // 11
+        let b = 2; // 10
+        console.log('3 binary ', a.toString(2))
+        console.log('2 binary ', b.toString(2))
+
+        // AND
+        // 0 0 => 0
+        // 1 0 => 0
+        // 0 1 => 0
+        // 1 1 => 1
+
+        console.log('a & b binary ', (a & b).toString(2)) // 11 + 10 => 10
+
+        // OR
+        // 0 0 => 0
+        // 1 0 => 1
+        // 0 1 => 1
+        // 1 1 => 1
+
+        console.log('a | b binary ', (a | b).toString(2)) // 11 + 10 => 11
+
+        // xor
+        // 0 0 => 0
+        // 1 0 => 1
+        // 0 1 => 1
+        // 1 1 => 0
+        console.log('a ^ b binary ', (a ^ b).toString(2)) // 11 + 10 => 01 = 1
+
+        //not
+        //10 => 01
+        console.log('~b binary ', (~b).toString(2)) // normal rule => 01 / due to sign bit like  0000001 => 1111110 => result -> 11
+
+        // shift left
+        console.log(' a << 1 binary ', (a << 1).toString(2)) // 11 ကနေ ဘယ်ဘက်ကို ရွေ့တော့  110 ရ 
+        // CPU Memorize လုပ်တဲ့ အခါသုံး Ram တိုးချင်တဲ့ အခါ shift left ကပိုမြန်
+        console.log(' a << 1 binary ', (a << 1)) // Decimal အရဆို 6 ရ
+
+        // shift right
+        console.log(' a << 1 binary ', (a >> 1).toString(2)) // စားတာနဲ့ တူ 1 ရ
+        console.log(' a << 1 binary ', (a >> 1)) // 
+    </script>
+</body>
+</html>

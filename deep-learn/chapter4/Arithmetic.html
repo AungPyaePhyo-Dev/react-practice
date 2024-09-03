@@ -21,6 +21,15 @@
         let result = obj + 3; // object to primitive -> valueOf / toString
         console.log(typeof(result)); // string
 
+        result = true + 3;
+        console.log('undefined + 2', undefined + 2); // undefined => NaN + 2 => NaN
+        console.log('null + 2', null + 2); // null => 0 + 2 => 3
+
+        // ECMA Script Specification => Object to Primitive
+
+        // Unary Arithmetic Operator
+            
+
 
     </script>
 </body>
