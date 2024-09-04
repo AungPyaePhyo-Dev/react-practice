@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let myan = 70;
+        let eng = 40;
+        let math = 40;
+
+        let pass = myan >= 40 && eng >= 40 && math >= 40;
+        console.log('is pass', pass);
+        if(pass) {
+            let gotDistinction  = myan >= 75 || eng >= 75 || math >= 80;
+            console.log("Got Distinction ", gotDistinction);
+        }
+    </script>
+</body>
+</html>

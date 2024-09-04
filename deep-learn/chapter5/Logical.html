@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("'hello' && false", 'hello' && false);
+
+        /*
+            0 0 -> 0
+            0 1 -> 0
+                if LHS falthy => return LHS
+
+            1 0 -> 0
+            1 1 -> 1
+                if LHS is truthy return RHS
+        */
+
+        // if LHS falthy => return LHS
+        console.log(' "" && false => ', "" && false); 
+        console.log(' 0 && false => ', 0 && false); 
+        console.log(' undefined && false => ', undefined && false); 
+        console.log(' null && false => ', null && false); 
+
+        // if LHS is truthy return RHS
+        console.log(' 1 && "hello"', 1 && 'hello');
+        console.log(' {} && {}', {} && {}); 
+
+    </script>
+</body>
+</html>

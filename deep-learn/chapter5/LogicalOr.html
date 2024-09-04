@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            0 0 -> 0
+            0 1 -> 1
+                if(LHS is falthy ) return RHS
+
+            1 0 -> 1
+            1 1 -> 1
+                if(LHS is truthy ) return LHS
+        */
+
+        console.log("null || 123 ", null || 123); // 123
+
+        console.log("hello || 123", "hello" || 123); // "hello"
+
+        console.log("!false ", !false); // true
+        console.log("!'false'", !"false"); // !true => false
+        console.log("!'false'", !!"false"); // !!true => true
+
+    </script>
+</body>
+</html>

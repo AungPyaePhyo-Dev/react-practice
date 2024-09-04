@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 10;
+        let b = 20;
+
+        a = b; // value semantic
+
+        console.log("A ", a, " b ", b);
+        a++;
+        console.log(a);
+
+        let obj = {
+            data : 100
+        }
+
+        let obj2 = obj; // refrence semantic
+
+        obj.data++;
+
+        console.log("Obj ", obj);
+        console.log("Obj2 ", obj2);
+         // refrence semantic ဖြစ်လို့ နှစ်ခုလုံးမှာ ပြောင်း
+
+         obj2 = {
+            data : 200
+         } // difference refrence
+
+         console.log("obj2 ", obj2);
+         console.log("obj ", obj);
+        //  difference refrence ဖြစ်သွားလို့ data မတူ
+
+        
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('100' == 100); // implict conversion
+
+        // + semantic 
+        // if obj -> toPrimitive
+        // one of them string
+        //     string concat
+        // else
+        //     convert to number + 
+        //     number arithmetic
+
+        console.log('null == undefined', null == undefined); // true
+        console.log('"123" == 123', "123" == 123); // string to number conversion // true
+        console.log("Empty String ", "" == 0) // true
+        console.log('true == 1', true == 1);
+        // step by step အလုပ်လုပ်ပုံ
+        /* 
+            true == 1
+            1 == 1
+            1 === 1 // true
+        */
+       console.log('true == "1"', true == "1");
+       /* 
+            true == "1"
+            1 == "1"
+            1 == 1
+            1 === 1 // true
+       */
+
+       // object to primitive
+       let obj = {
+        valueOf() {
+            return '100';
+        }
+       }
+
+       console.log('obj == 100', obj == 100);
+       /* 
+        '100' == 100
+        100 == 100
+        100 === 100 // true
+       */
+
+       console.log('null == false', null == false); // null == 0 // false // other case ဖြစ်သွား
+       console.log('null == 0', null == 0); // false - other case
+       console.log('undefined == 0', undefined == 0); // false - other case
+       console.log('undefined == false', undefined == false);
+       /* 
+            undefined == 0
+            undefined === 0 // false
+       */
+
+
+
+    </script>
+</body>
+</html>
