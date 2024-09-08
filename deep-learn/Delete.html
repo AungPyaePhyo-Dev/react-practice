@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="javascript:alert('JS')">Code</a>
+    <a href="javascript:void(document.body.style.backgroundColor='green');">Click Here for green background</a>
+    <script>
+        let obj = {
+            address : 'Somewhere',
+            name: 'AP'
+        }
+        delete obj.address;
+        console.log(obj);
+
+        let data = void('hello');
+        console.log("Data ", data);
+    </script>
+</body>
+</html>
