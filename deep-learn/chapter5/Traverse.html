@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [10,20,30,40,50]; // array တစ်ခန်းလုံးလျှောက်သွားတာကို Traverse လုပ်တယ်လို့ခေါ်
+        console.log("Length ", arr.length);
+
+        // for(i=0; i<arr.length; i++) {
+        //     console.log('Arr ', arr[i]);
+        // }
+
+        // for အစား for of က ပိုသုံးလို့ကောင်း 
+        // Read only ဆိုရင်တော့ for of ကိုသုံးသင့် / Write လုပ်ချင်တယ်ဆိုရင်တော့ for loop ကိုပြန်သုံးရမယ်
+
+        // for of ရဲ့ နောက်ကွယ်က အလုပ်လုပ်တဲ့ပုံစံ
+        // for(let item of arr) {
+        //     item = arr[i]
+        // }
+
+        for(const item of arr) { // best practice အနေနဲ့ const သုံးသင့်
+            // item *= 2;
+            console.log(item);
+        }
+
+        console.log("Arr ", arr); // loop ထဲမှာ 2 နဲ့မြှောက်လိုက်ပေမဲ့ Write လုပ်တဲ့ အခါမှာ value semantic ဖြစ်လို့ အပေါ်က arr ကို ပြောင်းမသွား
+
+
+
+    </script>
+</body>
+</html>
