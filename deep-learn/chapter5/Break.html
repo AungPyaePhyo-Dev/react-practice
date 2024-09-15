@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        outer:for(let i = 0; i < 5; i++) { // outer labell
+            console.log("Outer ", i);
+            for(let j = 0; j < 3; j++) {
+                console.log("Inner j ", j);
+                if(i == 3) {
+                    break outer; // break ရိုးရိုး နဲ့ label break ( inner ရဲ့ အပြင်က outer loop ပါ break ချင်တဲ့ အခါသုံး )
+                }
+            }
+        }
+    </script>
+</body>
+</html>

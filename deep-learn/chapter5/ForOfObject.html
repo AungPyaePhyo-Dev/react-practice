@@ -22,9 +22,16 @@
             console.log('Value', value);
         }
 
-        // obj ထဲမှာရှိတဲ့ properties တွေကိုစစ်ချင်တဲ့အခါသုံးလို့ကောင်း
+        // obj ထဲမှာရှိတဲ့ properties တွေကိုစစ်ချင်တဲ့အခါသုံးလို့ကောင်း   
         for(const [key, value] of Object.entries(obj)) { // array destructuring
             console.log('Key ', key, ' values ', value);
+        }
+
+        // for of က set ကိုလဲ loop ပတ်လို့ရ
+        let data = [1,1,2,2,3,3];
+        let wordSet = new Set(data); // [1,2,3] <= duplicate ဖြစ်တဲ့ array တွေဆို Set နဲ့ စစ်ထုတ်လို့ရ
+        for(let word of wordSet) {
+            console.log('Word ', word);     
         }
     </script>
 </body>

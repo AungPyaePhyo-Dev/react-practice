@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Requirements
+        //***** i = 0, j = 5
+        //**** i = 1, j = 4
+        //*** i = 2, j = 3
+        //** i = 3, j = 2
+        //* i = 4, j = 1
+
+        // Hello ဆက်တိုက်ဖြစ်တာသည် Inner Loop
+        // Hello
+        // Hello
+        // Hi                      Outer Loop
+        // Hello
+        // Hello 
+        // Hello 
+        // Hi 
+
+        for(let i = 0; i < 5; i++) {
+            let str = '';
+            for(let j = 1; j < 5 - i + 1; j++) {  // 5 - i => 5-0 => 5 ( ပထမဆုံး အကြိမ်မှာ loop 5 ကြိမ်ပတ်တော့ * 5 ခုထုတ်ပေး)
+                str += '*';
+            }
+            console.log(str);
+        }
+    </script>
+</body>
+</html>

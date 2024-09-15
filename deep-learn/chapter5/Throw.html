@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function div(a,b) {
+            if(isNaN(a) || isNaN(b)) {
+                throw new Error('A or B is NaN');
+            }
+            return a/b;
+        }
+
+        // error တက်နိုင်တဲ့ code ကို try catch နဲ့ ဖြေရှင်းလို့ရ
+
+        try {
+            let data =  div(10,NaN);
+            console.log('Div result ', data);
+        } catch(err){
+            console.log('Error of code ', err)
+        }
+        finally
+        {
+            // ဥပမာ - try ထဲမှာ Network တွေဖွင့်ပေး မိခဲ့ရင် ပြန်ပိတ်ပေး / clear လုပ်ပေး
+            console.log("Work always");
+        }
+
+
+        console.log("Work next line");
+
+        
+
+    </script>
+</body>
+</html>
