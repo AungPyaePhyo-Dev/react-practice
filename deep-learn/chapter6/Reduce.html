@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Reduce item နှစ်ခုကို ယှဉ်ချင်တဲ့ အခါသုံး
+        let arr = [1,3,5,6,-8,12];
+        console.log("Arr ", arr);
+        let total = arr.reduce((a,b) => {
+            console.log("A ", a, " B ", b);
+        })
+
+        console.log("Total ", total);
+
+        let min = arr.reduce((a,b) => {
+            return a > b ? b : a;
+        })
+
+        console.log("Min ", min);
+    </script>
+</body>
+</html>

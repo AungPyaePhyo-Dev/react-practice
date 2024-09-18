@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let students = [
+                {
+                    name : "Aung Aung",
+                    age : 30,
+                    gender : "Male"
+                },
+                {
+                    name : "Mg Mg",
+                    age : 20,
+                    gender : "Male"
+                },
+                {
+                    name : "Mya Mya",
+                    age : 31,
+                    gender : "Female"
+                },
+                {
+                    name : "Hla Hla",
+                    age : 18,
+                    gender : "Female"
+                }
+        ];
+
+        // array က ထောင်ချီ သောင်းချီရှိတာမျိုးဆို map တို့ filter တို့ reduce တို့က မသုံးသင့်
+        
+        let youngestFemale = students.filter(student => student.gender === "Female")
+                                .reduce((studentA, studentB) => {
+                                    return studentA.age < studentB.age ? studentA : studentB;
+                                });
+        console.log("youngestFemale ", youngestFemale);
+
+        let maleNames = students.filter(student => student.gender === "Male")
+                                 .map(student => student.name);
+        console.log("Male names", maleNames);
+    </script>
+</body>
+</html>
