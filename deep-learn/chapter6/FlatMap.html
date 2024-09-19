@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [10,20,30];
+        let arr2 = arr.map(item => [item, item*item]); // x => x * x , 10 => [10, 100];
+        console.log("Arr2", arr2);
+
+        arr2 = arr2.flatMap(item=>[item, item*item]); // flat => [10,100,20,400 ...];
+        console.log("Arr2", arr2);
+
+        let arr3 = [[1,2,3],[4,5,6]]; 
+        console.log("Arr3 ", arr3);
+        console.log(arr3.flat());  // [1,2,3,4,5,6]
+
+        let arr4 = arr3.concat(arr3.flat());
+        console.log("Arr2 ", arr2);
+        console.log("Arr 4", arr4);
+
+        
+    </script>
+</body>
+</html>

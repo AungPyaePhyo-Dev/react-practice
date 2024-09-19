@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let stack = []; // LIFO 
+        stack.push(10);
+        stack.push(20);
+        console.log(stack.pop()); // 20
+        console.log(stack.pop()); // 10
+
+        let queue = [];
+        queue.unshift(10);
+        queue.unshift(20);
+        console.log('Queue ', queue);
+
+        console.log('Shift ', queue.shift());
+        console.log('Shift ', queue.shift());
+
+    </script>
+</body>
+</html>
