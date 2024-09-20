@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function greet() {
+            console.log("Arguments", arguments);
+        }
+        greet(1,2,3,'hello');
+
+        function display(msg) {
+            console.log("Display ", display.length, " arguments ", arguments.length); // ==
+            console.log("display ", msg)
+        }
+
+        display();
+
+        let arr = [10,8,-4,100];
+        console.log("Math.min ", Math.min(...arr)); // spread မလုပ်ရင် NaN ထွက်
+
+    </script>
+</body>
+</html>

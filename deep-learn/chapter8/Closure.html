@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getUniqueId() {
+            let id = 0;
+            return function inner() { 
+                // outer ထဲက variable ကို inner မှာယူသုံးတာသည် closure
+                return id ++;
+            }
+        }
+
+        let idOne = getUniqueId();
+        console.log("Id ", idOne());
+        console.log("Id ", idOne());
+    </script>
+</body>
+</html>

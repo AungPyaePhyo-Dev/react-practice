@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // First Class ဖြစ်ဖို့ဆိုရင် 
+        // 1. can assign to variable
+        // 2. can pass parameter
+        // 3. can return from function
+
+        function payment() {
+            console.log("Payment");
+        }
+
+        function processOrder() {
+            console.log("Process order");
+        }
+
+        function once(fn) { // higher order function
+            let done = false;
+            return function() { // closure
+                if(!done) {
+                    done = true;
+                    return fn();
+                }
+            }
+        }
+
+        payment = once(payment);
+        processOrder = once(processOrder);
+
+        payment();
+        payment();
+        processOrder();
+        processOrder();
+    </script>
+</body>
+</html>

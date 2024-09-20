@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            name : 'AP',
+            display(msg) {
+                console.log(msg, ' my name is ', this.name);
+            }
+        }
+
+        obj.display("Hello")
+        let method = obj.display;
+        let obj2 = {
+            name : "Someone"
+        }
+        method.call(obj2, 'Hi');
+        method.apply(obj2, ['Hi']); // array, method နဲ့ obj ကို ပြန် assign တဲ့ အခါ မူရင်း obj ထဲက this ကပျောက်သွားလို့ obj2 ထည့်ပေးရ
+
+        let arr = [1,20,-4,5,10];
+        console.log("Math.min ",  Math.min.apply(null, arr)); // usecase
+
+        let method2 = obj.display.bind(obj2);
+        method2("Hello"); // ဒီလိုလဲ call လို့ရ
+
+        
+    </script>
+</body>
+</html>

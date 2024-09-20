@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            method1() {
+                console.log("Method 1");
+                return this; // due to this
+            },
+            method2() {
+                console.log("Method 2");
+                return this; // due to this
+            }
+        }
+
+        obj.method1().method2(); // ဒီလိုဆင့်ခေါ်လို့ရ / jquery တွေမှာအသုံးများ
+    </script>
+</body>
+</html>

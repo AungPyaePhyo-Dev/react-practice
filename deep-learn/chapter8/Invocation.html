@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // refrence sementic ဆိုတာလဲ ရှိသေး
+        function add(x,y) {
+            return x + y;
+        }
+        let a = add(10,2); // primitive နဲ့သွားလို့ copy sementic
+        let b = add(4,5);
+
+        let fun = add;
+        fun = add;
+        console.log("Fun ", fun?.(20,40))
+
+        let obj = {
+            name : "AP",
+            display() {
+                console.log("My name is ", this.name)
+            }
+        }
+
+        obj.display(); // method အနေနဲ့ခေါ်တာ / method အနေနဲ့ခေါ်ရင် obj ခံပေးဖို့လို
+
+        
+     </script>
+</body>
+</html>

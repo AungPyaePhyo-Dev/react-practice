@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // First Class ဖြစ်တယ်ဆိုတာ value အနေနဲ့ သုံးလို့ရတယ်
+        function hello() 
+        {
+            console.log("Hello");
+        }
+        let fun = hello(); // Rule1
+        fun();
+
+        // Rule2
+        function acceptAnother(fn)
+        {
+            console.log("Accept another ");
+            fn();
+        }
+        acceptAnother(hello);
+
+        // Rule 3
+        function getFun() {
+            return hello;
+        }
+        getFun()();
+    </script>
+</body>
+</html>
