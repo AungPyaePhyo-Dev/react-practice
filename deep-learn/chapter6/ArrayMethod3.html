@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,10,5,6,7,8,9,10,NaN];
+
+        let index = arr.indexOf(7);
+        console.log("Index ", index); // 7
+
+        index = arr.indexOf(70);
+        console.log("Index " , index); // -1
+
+        index = arr.indexOf(10);
+        console.log("Index ", index); // 5
+
+        index = arr.lastIndexOf(10);
+        console.log("Index ", index)// နောက်ဆုံးက10 ရဲ့ index ထွက်မယ်
+
+        index = arr.indexOf(10,5);
+        console.log("Index ", index); // 4 ကနေစရှာ
+
+        // Requirements 10 ရဲ့ index အကုန်
+
+        index = arr.indexOf(10);
+        while(index != -1) {
+            console.log('Index of 10 ', index);
+            index = arr.indexOf(10, index + 1);
+        }
+
+        // includes
+        console.log('Include', arr.includes(10))
+        console.log("include 10", arr.includes('10')); // === false
+
+        console.log("IndexOf NaN", arr.indexOf(NaN)); // -1 // cannot find
+        console.log("Include NaN", arr.includes(NaN)); // true
+    </script>
+</body>
+</html>

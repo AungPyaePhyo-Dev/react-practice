@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [3,2,1,100,200,112];
+        arr.sort();
+        console.log("Sort ", arr); // 1,100,112,2,200,3
+        // mixed type => string နဲ့ order စီ
+
+        /* 
+            comparator function
+            == 0
+            > > 0
+            < < 0
+        */
+
+        arr.sort((a,b) => a-b); // ascending 
+        console.log("asc", arr)
+        arr.sort((a,b) => b-a); // descending
+
+        console.log("desc", arr);
+
+        let students = [
+            {
+                name : 'Aung Aung',
+                age : 20
+            },
+            {
+                name : 'Tin Tin',
+                age : 19
+            },
+            {
+                name : 'Aye Mya',
+                age : 19
+            }
+        ];
+
+        students.sort((studentA, studentB) => studentA.age - studentB.age); // အသက်နဲ့ sorting စီ
+        console.log("students ", students);
+
+        students.sort((a,b) => {
+            if(a.age == b.age) {
+                return a.name.localeCompare(b.name); // string တွေကို  order စီချင်တဲ့ အခါ localeCompare ကိုသုံး
+            }else {
+                return a.age - b.age;
+            }
+        })
+
+        console.log("students ", students);
+    </script>
+</body>
+</html>

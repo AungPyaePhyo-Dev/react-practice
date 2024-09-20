@@ -12,7 +12,25 @@
         console.log('Arr ', arr);
         console.log('Slice1 ', slice1);
         console.log('slice arr(1)', arr.slice(1));
-        console.log('slice arr(1,length)', arr.slice(1,arr.length));
+        console.log('slice arr(1,length)', arr.slice(1,arr.length)); 
+        // ထိပ်ဆုံးနှစ်ခန်းကိုပဲယူ
+        console.log('Top two entry', arr.slice(0,2)); // copy ပဲပြန်လာ original array ကိုမထိ
+
+        // splice က original array ကိုထိ 
+
+        let arr2 = arr.splice(3); // ၃ ခန်းကနေစပြီးနောက်ပိုင်းအကုန်ဖြတ်ထုတ်
+        console.log("Arr ", arr); // org arr 123 ပဲရှိတော့
+        console.log("Arr2 ", arr2); // 456 ကိုဖြတ်ထုတ်သွား
+
+        // splice(start, deleteCount, insert)
+        
+        // oddIndex.reverse() // ကြီးတဲ့ index တွေအရင်ဖျက်တော့ solution မပြောင်း
+        /* 
+            oddIndex = [0,2,4]
+            arr.splice(0,1); [2,3,4,5,6]
+            [2,3,4,5,6].splice(2) // 4 => [2,3,5.6] <= result
+        */
+
     </script>
 </body>
 </html>
