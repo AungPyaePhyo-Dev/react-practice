@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // repitition
+        // var => letter, _ , greety repetition, non greety repeatition
+        // 
+        let pattern = /\d+/; // + => one or more
+        console.log(`Test ${pattern}`, pattern.test('ab'))
+        console.log(`Test ${pattern}`, pattern.test('011'))
+        console.log(`Test ${pattern}`, pattern.test('!@#'))
+
+        pattern = /\d*/; // *  zero or more
+        console.log(`Test ${pattern}`, pattern.test('ab'))
+        console.log(`Test ${pattern}`, pattern.test('011'))
+        console.log(`Test ${pattern}`, pattern.test('!@#'))
+
+        pattern = /\d?/; //   zero or one
+        console.log(`Test ${pattern} ab`, pattern.test('ab'))
+        console.log(`Test ${pattern} 011`, pattern.test('011'))
+        console.log(`Test ${pattern} !#`, pattern.test('!@#'))
+
+        pattern = /\d{3,5}/; // 3 to 5
+        console.log(`Test ${pattern} ab`, pattern.test('ab'))
+        console.log(`Test ${pattern} 01`, pattern.test('01'))
+        console.log(`Test ${pattern} 123456`, pattern.test('123456'))
+
+        pattern = /\d{3,}/; // at least three
+        console.log(`Test ${pattern} ab`, pattern.test('ab'))
+        console.log(`Test ${pattern} 01`, pattern.test('01'))
+        console.log(`Test ${pattern} 123456`, pattern.test('123456'))
+    </script>
+</body>
+</html>

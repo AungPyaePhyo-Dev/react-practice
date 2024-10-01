@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btnAllocate">Allocate</button>
+    <button type="button" id="btnAssignNull">AssignNull</button>
+    <script>
+        // let map = new Map();
+        // Garbage Collection လုပ်ချင်တယ် map လုပ်ပြီး ပြန် clean မလုပ်ချင်တဲ့ အခါသုံး
+        let map = new WeakMap();
+        document.getElementById('btnAllocate')
+                .addEventListener('click', () => {
+                    let arr = [];
+                    for(let i=0; i < 1000; i++) {
+                        arr.push(new Array(10000));
+                    }
+                    map.set('arr ', arr)
+                })
+    </script>
+</body>
+</html>

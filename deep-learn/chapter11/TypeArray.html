@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button type="button" id="btnAllocate">Allocate</button>
+    <button type="button" id="btnAssignNull">AssignNull</button>
+    <script>
+          // Javascript = Dynamic
+        // variable => any value
+
+        // number => integer ( 32 bits ) / 4 bytes in other languages
+        // number => 8 bytes  in js
+        // object => 16 bytes in js
+        // variable => 16 bytes in js
+
+        // array => 10, 60
+        // int array => 4 * 10 = 40
+
+        // Typed Array ဖြစ်သွားတဲ့ အတွက် Integer ပဲထည့်လို့ရ
+        // Node JS => Network Protocol တွေနဲ့လုပ်တဲ့ အခါ size သက်သာအောင်သုံး
+        // Network Programming
+        
+        let arr;
+        document.getElementById('btnAllocate')
+                .addEventListener('click', () => {
+                    arr = [];
+                    for(let i=0; i < 1000; i++) {
+                        arr.push(new Int8Array(10000));
+                    }
+                })
+    </script>
+
+</body>
+</html>

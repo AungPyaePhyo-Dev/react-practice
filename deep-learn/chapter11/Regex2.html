@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let pattern = /\d+/; // digits
+        console.log(`Test ${pattern}`, pattern.test('ab'))
+        console.log(`Test ${pattern}`, pattern.test('011'))
+
+        pattern = /\D+/; // non digits
+        console.log(`Test ${pattern}`, pattern.test('ab'))
+        console.log(`Test ${pattern}`, pattern.test('011'))
+
+        pattern = /\w+/; // words a-z, 0-9
+        console.log(`Test ${pattern}`, pattern.test('ab'))
+        console.log(`Test ${pattern}`, pattern.test('011'))
+        console.log(`Test ${pattern}`, pattern.test('!@#'))
+
+
+        pattern = /\W+/; // non words
+        console.log(`Test ${pattern}`, pattern.test('ab'))
+        console.log(`Test ${pattern}`, pattern.test('011'))
+        console.log(`Test ${pattern}`, pattern.test('!@#'))
+
+
+        pattern = /\s+/; // space
+        console.log(`Test ${pattern}`, pattern.test('ab'))
+        console.log(`Test ${pattern}`, pattern.test('011'))
+        console.log(`Test ${pattern}`, pattern.test('\t'))
+
+
+        pattern = /\S+/; // not space
+        console.log(`Test ${pattern}`, pattern.test('ab'))
+        console.log(`Test ${pattern}`, pattern.test('011'))
+        console.log(`Test ${pattern}`, pattern.test('!@#'))
+
+        pattern = /(a|b)+/; // a or b
+        console.log(`Test ${pattern}`, pattern.test('ab'))
+        console.log(`Test ${pattern}`, pattern.test('asd'))
+        console.log(`Test ${pattern}`, pattern.test('!@#'))
+
+        pattern = /\S+/; // not space
+        console.log(`Test ${pattern}`, pattern.test('ab'))
+        console.log(`Test ${pattern}`, pattern.test('011'))
+        console.log(`Test ${pattern}`, pattern.test('!@#'))
+    </script>
+</body>
+</html>

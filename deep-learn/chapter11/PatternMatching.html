@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // input, email valid, number valid
+        let pattern = /a+b+/; // + => one or more
+        console.log("test ab", pattern.test('ab'));
+        console.log("test aaab", pattern.test('aaab'));
+        console.log("test aaaab", pattern.test('aaaab'));
+        console.log("test cda", pattern.test('cda'));
+
+
+        pattern = /[abc]+/; // a or b or c
+        console.log("Test /[abc]+/ abc", pattern.test('abc'))
+        console.log("Test /[abc]+/ aa", pattern.test('aa'))
+        console.log("Test /[abc]+/ cd", pattern.test('cd'))
+        console.log("Test /[abc]+/ de", pattern.test('de'))
+
+        pattern = /[0-9]+/; // digits
+        console.log(`Test ${pattern}`, pattern.test('ab'))
+        console.log(`Test ${pattern}`, pattern.test('011'))
+
+
+        // Negate Character Class 
+        pattern = /[^0-9]+/; // digits
+        console.log(`Test ${pattern}`, pattern.test('ab'))
+        console.log(`Test ${pattern}`, pattern.test('011'))
+
+        // Any Character
+        pattern = /.+/; // digits
+        console.log(`Test ${pattern}`, pattern.test('ab'))
+        console.log(`Test ${pattern}`, pattern.test('011'))
+    </script>
+</body>
+</html>
