@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Key value pair လိုချင်ရင် map ကို သုံးလို့ရ
+        // reinvent the wheel
+        
+        let map = new Map([
+            ["one", 1],
+            ["two", 2]
+        ]);
+        console.log("Map ", map);
+
+        map.set("one", 1000);
+        console.log("map.get ", map.get("one"));
+        console.log("map.get ", map.get("three"));
+        console.log("map.size", map.size);
+
+        console.log("keys ", map.keys());
+        let values = [...map.values()];
+        console.log("values ", values);
+        // id အပေါ်မူတည် ပြီး ဆွဲတဲ့ အခါတွေမှာ သုံးလို့ကောင်း
+
+        for(const [key, value] of map.entries()) {
+            console.log("Key ", key, " value ", value);
+        }
+
+        // map.clear();
+
+        console.log("map ", map);
+
+    </script>
+</body>
+</html>

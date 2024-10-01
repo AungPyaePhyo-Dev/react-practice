@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // already exists => include, indexOf
+        class OurSet {
+            constructor(items) {
+                this.items = this.removeDuplicate(items);
+            }
+
+            get size() {
+                return this.items.length;
+            }
+
+            removeDuplicate(items) {
+                let result = [];
+                for(const item of items) {
+                    if(result.indexOf(item) == -1) {
+                        result.push(item);
+                    }
+                }
+                return result;
+            }
+
+            add(item) {
+                if(this.items.indexOf(item) == -1) {
+                    this.items.push(item);
+                }
+            }
+        }
+
+        let arr = [1,2,3,1,1,2,3];
+        let set = new OurSet(arr);
+        console.log("set size ", set.size);
+
+        set.add(10);
+        set.add(1);
+        set.add([1,2,3]);
+        console.log("set ", set);
+
+    </script>
+</body>
+</html>
