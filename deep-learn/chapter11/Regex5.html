@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let pattern = /(abc)+/; // abc အတွဲလိုက်မှ လုပ်
+        console.log(`Test ${pattern} abc`, pattern.test('abc'))
+        console.log(`Test ${pattern} abcabc`, pattern.test('abcabc'))
+        console.log(`Test ${pattern} ab`, pattern.test('ab'))
+
+        // flag  => g globally / i
+        pattern = /(abc)+/i; // case insentive ( အကြီးရော အသေးရောလုပ်ဖို့ )
+        console.log(`Test ${pattern} abc`, pattern.test('abc'))
+        console.log(`Test ${pattern} abcabc`, pattern.test('abcabc'))
+        console.log(`Test ${pattern} ABC`, pattern.test('ABC'))
+
+        // search
+        console.log(`Javascript.search(/script/ui)`, "Javascript".search(/script/ui)) // u unicode နဲ့ i case insentive ဖြစ်တဲ့ string ကို script ပါပြီး စတဲ့ နေရာကို ထုတ်ပေး
+
+        // replace
+        let text = "javascript programming";
+        text = text.replace(/javascript/gi, "Javascript");
+        console.log("text ", text);
+
+        // match => ကိုယ်လိုချင်တဲ့ expression တွေကို ဆွဲထုတ်
+        let result = "17 plus 8 equals 1231234".match(/\d{2,5}/g); // 2 လုံးကနေ 5 လုံးအထိပဲယူ
+        console.log("Result ", result);
+
+
+    </script>
+</body>
+</html>

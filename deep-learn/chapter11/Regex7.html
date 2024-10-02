@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = "apple;orange;banana";
+        let items = str.split(";");
+        console.log("Items ", items);
+
+        str = "123 123   112";
+        items = str.split(/\s+/); // space တစ်ခုထဲမဟုတ်ပဲ အများကြီးခြားထားခဲ့ရင်တောင် ခွဲထုတ်လို့ရဖို့ regular expression \s space ကိုသုံး
+        console.log("Items ", items);
+
+        // web scrapping
+        // သူများ site က data တွေကို download လုပ်ပြီး class နေရာမှာတင် regular expression နဲ့ စစ်
+        // ဥပမာ craw လုပ်တာမျိုး
+    </script>
+</body>
+</html>

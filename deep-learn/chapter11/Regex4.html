@@ -26,6 +26,16 @@
         console.log(`Test ${pattern}`, pattern.test('another moon'))
         console.log(`Test ${pattern}`, pattern.test('moon'))
         console.log(`Test ${pattern}`, pattern.test('ama'))
+
+        pattern = /Java(?=Script)/; //  java ပါမှ script ကို match လုပ်
+        console.log(`Test ${pattern} JavaScript`, pattern.test('JavaScript'))
+        console.log(`Test ${pattern} VBScript`, pattern.test('VBScript'))
+        console.log(`Test ${pattern} JScript`, pattern.test('JScript'))
+
+        pattern = /Java(?!Script)/; //  script ကလွဲရင်ကျန်တာအကုန်လုပ်
+        console.log(`Test ${pattern} JavaScript`, pattern.test('JavaScript'))
+        console.log(`Test ${pattern} JavaProgram`, pattern.test('JavaProgram'))
+        console.log(`Test ${pattern} JavaEE`, pattern.test('JavaEE'))
     </script>
 </body>
 </html>

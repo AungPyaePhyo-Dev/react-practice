@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let url = /(\w+):\/\/([\w.]+)\/(\S*)/;
+        let text = "Visit my blog at http://www.example.com/~david";
+        let match = text.match(url);
+        let fullUrl, protocol, host, path;
+        if(match !== null) {
+            fullUrl = match[0]; // fullurl
+            host = match[2]; // host
+            path = match[3]; // path
+        }
+        console.log("Fullurl ", fullUrl);
+        console.log("host ", host);
+        console.log("path ", path);
+
+        const words = /\b\p{Alphabetic}+\b/gu;
+        for(const word of text.matchAll(words)) {
+            console.log(`Found '${word[0]}' at index ${word.index}.`);
+        }
+    </script>
+</body>
+</html>
