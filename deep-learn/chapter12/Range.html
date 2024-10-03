@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         class Range{
+            constructor(from,to) {
+                this.from = from;
+                this.to = to;
+            }
+            [Symbol.iterator]()
+            {
+                let done = false;
+                return {
+                    next() {
+                        let notDone = done;
+                        done = true;
+                        return {
+                            value : notDone == false ? 100 : undefined,
+                            done : notDone
+                        }
+                    }
+                }
+            }
+         }
+
+         let range = new Range(1,5);
+         let iterator = range[Symbol.iterator]();
+         console.log("Next ", iterator.next());
+         console.log("Next ", iterator.next());
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // generator ကပို clear ဖြစ်
+        // async await ရဲ့နောက်ကွယ်မှာ iterator, generator နဲ့လုပ်ထား
+        // general မှာ မသုံး
+        
+        function *getGen()
+        {
+            yield 1;
+            yield 2;
+            yield 3;
+        }
+        let gen = getGen();
+        console.log("Next ", gen.next());
+        console.log("Next ", gen.next());
+        console.log("Next ", gen.next());
+        console.log("Next ", gen.next());
+
+        function *range(from,to) 
+        {
+            for(let i = from; i <= to; i++) {
+                yield i;
+            }
+        }
+
+        for(const item of range(1,3)) {
+            console.log("item ", item);
+        }
+    </script>
+</body>
+</html>

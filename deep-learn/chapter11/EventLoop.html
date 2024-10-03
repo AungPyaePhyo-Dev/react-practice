@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btnClick">Click</button>
+</body>
+<script>
+
+    console.log("Before Dalay");
+
+    document.getElementById('btnClick')
+            .addEventListener("click", () => {
+                console.log("Clicked");
+            }); // call stack
+    function delay(ms) {
+        let start = new Date();
+        while(new Date()-start <= ms);
+    }
+
+    setTimeout(() => {
+        console.log("hello ")
+    }, 0);
+    delay(2000); // block
+    console.log("world");
+    // world hello
+
+    // javascript event loop
+    // event, timer => queue
+    // call stack empty -> work queue
+    // latentflip
+
+    // Browser Event Loop
+    // Node JS Event Loop
+
+</script>
+</html>
