@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // အရင်ကပဲသုံး နောက်ပိုင်း framework တွေမှာသုံးစရာမလိုတော့
+        let url = new URL("http://www.google.com/search.php?query=something#page");
+        console.dir(url);
+
+        let url1 = "http://www.something.com/query=hi hello"; // space ကို လဲ %20 လို့ auto convert  လုပ်သွား
+        let encoded = encodeURI(url1);
+        console.log(encoded);
+
+        let str =  decodeURI(encoded);
+        console.log("str ", str);
+
+    </script>
+</body>
+</html>

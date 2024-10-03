@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+    <script>
+        // daylight savings
+        // timezone in one country,  Myanmar ( + 65 ) timezone / GMT+
+        // တိုင်းပြည်တစ်ခုမှာ timezone တွေအများကြီး ရှိတဲ့ တိုင်းပြည် => USA (11), Russia (11), France (13)
+
+        let date = new Date();
+        console.log("Timestamp ", date.getTime());
+
+        // date = new Date(2024,8,21,12); // month = 1
+        
+        // date timezone / moment.js
+
+        console.log("Date ", date);
+
+        console.log("Year ", date.getFullYear()); 
+        console.log("Month ", date.getMonth()); // month - 1
+        console.log("Day ", date.getDay()); // Saturday, Sunday  6,7
+        console.log("Date ", date.getDate()); // current date
+
+
+        let m = moment();
+        console.log("m ", m.format('MMMM Do YYYY, h:mm:ss a'));
+        // date ကို arithmetic လုပ်လို့ကောင်း
+        console.log("add 10 days", m.add(10, 'days').calendar()); // 10 days ထပ် ေပါင်းချင်တဲ့ အခါသုံးလို့ကောင်း
+        console.log("add 4 weeks", m.add(4, 'weeks').calendar()); // 4 weeks ထပ် ေပါင်းချင်တဲ့ အခါသုံးလို့ကောင်း
+
+        // server ကိုပို့တဲ့အခါ getTime() နဲ့ပို့သင့် // backend / frontend
+        let json = {
+            date : new Date().getTime() // best practice
+        }
+
+        let str = JSON.stringify(json);
+        console.log("str ", str);
+
+    </script>
+</body>
+</html>

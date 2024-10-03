@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Internationalization
+
+        let d = new Date();
+        let opts = { year : "numeric", era: "short"};
+        console.log(Intl.DateTimeFormat("en", opts).format(d));
+        console.log(Intl.DateTimeFormat("en-u-ca-buddhist", opts).format(d));
+    </script>
+</body>
+</html>

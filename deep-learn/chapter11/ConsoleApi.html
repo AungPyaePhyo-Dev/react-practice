@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let data = {
+            value : 200
+        }
+
+        console.log("hello ", data);
+
+        let arr = [
+            {
+                name : "AP",
+                age : 26
+            }, {
+                name : "Another",
+                age : 40
+            }
+        ];
+
+        console.log("Arr ", arr);
+        console.log("Arr ", arr[0]);
+        arr[0].age = 50;
+        console.log("Arr ", arr);
+
+        console.warn("warning");
+        console.debug("Debug");
+        console.error("Error");
+
+        function display(message) {
+            console.assert(message != null, 'Message should not be null');
+            console.log("Display ", message);
+            console.trace("This is trace");
+        }
+
+        console.time("timer1");
+
+        display();
+        display("Hello");
+        // console.clear();
+        // window.console
+        console.table(arr);
+
+        console.count("Hello");
+        console.count("Hello");
+        console.count("Hello");
+        console.countReset("Hello")
+        console.count("Hello");
+
+        // herichy နဲ့ပြချင်တဲ့အခါ group သုံး
+        console.group();
+        console.log("Level 1");
+        console.group();
+        console.groupCollapsed();
+        console.log("Level 2");
+        console.groupEnd();
+        console.groupEnd();
+        console.log("Normal")
+
+        console.timeLog("timer1", "This is last call");
+        console.timeEnd("timer1"); // performance တွေတိုင်းတဲ့အခါသုံးလို့ကောင်း 
+        
+
+    </script>
+</body>
+</html>

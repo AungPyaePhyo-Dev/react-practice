@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="timerCount"></div>
+    <div id="box"></div>
+    <script>
+        // gasp js animation
+        let x = 10;
+        setInterval(() => {
+            document.getElementById('timerCount').innerText = (new Date());
+            let box = document.getElementById('box');
+            x += 10;
+            box.style.left = x + 'px';
+            
+        }, 1000);
+
+        // js animation
+        // left to right
+        // can't use for loop => for loop ကတစ်ခါထဲတန်း run သွားမယ်
+        // 
+    </script>
+</body>
+</html>

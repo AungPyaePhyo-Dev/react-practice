@@ -18,6 +18,14 @@
         // web scrapping
         // သူများ site က data တွေကို download လုပ်ပြီး class နေရာမှာတင် regular expression နဲ့ စစ်
         // ဥပမာ craw လုပ်တာမျိုး
+
+        let pattern = /Java/g;
+        let text = "Javascript > Java";
+        let match;
+        while((match = pattern.exec(text)) != null) {
+            console.log(`Matched ${match[0]} at ${match.index}`);
+            console.log(`Next search begin at ${pattern.lastIndex}`);
+        }
     </script>
 </body>
 </html>
