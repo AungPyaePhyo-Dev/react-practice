@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // getOwnPropertyDescriptor
+        // configurable => delete လုပ်လို့ရ
+        // enumerable => for in တွေနဲ့ ပတ်ရင် ပါလာမယ်
+        // writeable => write လို့ရ 
+        // value => 
+        let obj = {
+            name : "AP",
+            age : 40
+        }
+        console.log("Object. ", Object.getOwnPropertyDescriptor(obj, 'name'));
+        console.log("Window. ", Object.getOwnPropertyDescriptor(window, 'top')); // read only
+        Object.defineProperty(obj, "address", {
+            configurable: true,
+            enumerable:  true,
+            // value : "Yangon",
+            // writable: true
+            get() {
+                console.log("getter")
+                return "somewhere";
+            },
+            set (newValue) {
+
+            }
+        });
+
+        for(let prop in obj) {
+            console.log("Prop ", prop)
+        }
+
+        obj.address = "Another";
+        console.log("Obj ", obj);
+    </script>
+</body>
+</html>

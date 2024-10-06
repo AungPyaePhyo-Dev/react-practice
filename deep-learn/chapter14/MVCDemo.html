@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Name <span id="textName"></span>
+    Age <span id="textAge"></span>
+</body>
+<script>
+    // angular မှာ အလုပ်လုပ်တဲ့ပုံစံ
+    let model = {
+        name : "AP",
+        age: 20
+    }
+
+    function update(model) {
+        document.getElementById('textName').innerHTML = model.name;
+        document.getElementById('textAge').innerHTML = model.age;
+    }
+    // update(model);
+
+    function mvcProxy(obj) {
+        let proxy = {};
+        for(let prop in obj) {
+            Object.defineProperty(proxy,prop, {
+                get() {
+                    return obj[prop];
+                },
+                set(newValue) {
+                    console.log("Update property" ,)
+                    obj[prop] = newValue;
+                    update(obj);
+                }
+            });
+        }
+        return proxy;
+    }
+
+    let proxy = mvcProxy(model);
+    proxy.name = "Updated Name";
+</script>
+</html>

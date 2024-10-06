@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // immutability လုပ်တဲ့အခါမှာ အသုံးဝင်
+        let model = {
+            name : "AP",
+            age : 25
+        }
+        Object.seal(model);
+        console.log("Is seal ", Object.isSealed(model)); // seal လုပ်ထားပြီးသားဆို property အသစ်ထပ်တိုးလို့့မရတော့
+        model.address = "Yangon";
+        model.name = "Someone"; // ပြင်လို့တော့ရ
+        Object.freeze(model); // ပြင်လို့မရစေချင်ရင် freeze ကိုသုံး
+        model.name = "Someone updated";
+        console.log("Frozen ", Object.isFrozen(model));
+        console.log("Model ", model);
+        
+    </script>
+</body>
+</html>

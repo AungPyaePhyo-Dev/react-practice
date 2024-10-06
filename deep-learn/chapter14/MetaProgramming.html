@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // general function 
+        /*
+            function validation(obj) {
+                return obj.name !== null && obj.name !== undefined
+                        && obj.age !== null && obj.age !== undefined
+            }
+        */
+
+        // generic function
+        // ကြိုက်တဲ့ obj လာ parse လုပ်လို
+        // that is meta programming ( dynamic )
+        
+        function validate(obj) {
+            let result = true;
+            for(const prop in obj) {
+                result = result && obj[prop]!=null && obj[prop] !=undefined;
+            }
+            return result;
+        }
+
+        console.log("valid", validate({
+            name : "AP",
+            age : undefined
+        }));
+
+        console.log('valid', validate({
+            address : "Yangon"
+        }));
+
+
+    </script>
+</body>
+</html>
