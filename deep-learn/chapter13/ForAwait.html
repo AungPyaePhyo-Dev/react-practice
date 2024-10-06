@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let urls = [
+            'https://jsonplaceholder.typicode.com/todos/1',
+            'https://jsonplaceholder.typicode.com/todos/2',
+            'https://jsonplaceholder.typicode.com/todos/3',
+            'https://jsonplaceholder.typicode.com/todos/4'
+        ];
+        async function process() {
+            let promises = urls.map(url => fetch(url));
+            // for(const p of promises) {
+            //     let response = await p;
+            //     let json = response.json();
+            //     console.log("Json ", json);
+            // }
+
+            for await(const p of promises) {
+                let json = p.json();
+                console.log("Json ", json);
+            }
+
+        }
+        process();
+    </script>
+</body>
+</html>

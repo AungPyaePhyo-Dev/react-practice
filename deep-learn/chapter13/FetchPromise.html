@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ROP နဲ့တူ
+        // fetch("https://jsonplaceholder.typicode.com1/todos")
+        //     .then(response => response.json(),(err) => console.log("Error ", err))
+        //     // .then(data => console.log('Todo all', data))
+        //     .catch(err => console.log("Catch ", err));
+
+
+        // fetch("https://jsonplaceholder.typicode.com/todos/1")
+        // .then(response => response.json(),(err) => console.log("Error ", err))
+        // .then(todoJson1 => {
+        //     fetch("https://jsonplaceholder.typicode.com1/todos/2")
+        //     .then(response => response.json(),(err) => console.log("Error ", err))
+        //     .then(todoJson2 => {
+        //         console.log("Todo1", todoJson1, " todo2 ", todoJson2)
+        //     })
+            
+        // })
+        // .catch(err => console.log("Catch ", err));
+
+        // promise မှာ parallel သွားတဲ့နည်း
+        // best way
+       
+        console.time('api')
+        let p1 = fetch("https://jsonplaceholder.typicode.com/todos/1");
+        let p2 = fetch("https://jsonplaceholder.typicode.com/todos/2");
+
+        Promise.all([p1,p2]) // problem => 2 ခုလုံး resolve ဖြစ်မှာ လုပ် / error ရှင်းမှ လုပ်
+                .then(data => {
+                    console.timeLog('api')
+                    console.log('Data ', data);
+                })
+
+        Promise.allSettled([p1,p2]) // မှန်မှန်မှားမှာ result ပြန်ချင်ရင် allsettled သုံးလို့ရ
+        .then(data => {  // status => reject | fullfailed
+            console.timeLog('api')
+            console.log('Data ', data);
+        })
+
+    </script>
+</body>
+</html>

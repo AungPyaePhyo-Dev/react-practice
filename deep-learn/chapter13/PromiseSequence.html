@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // asynchronous 
+        console.time('api')
+        let p1 = fetch("https://jsonplaceholder.typicode.com/todos/1");
+        let p2 = fetch("https://jsonplaceholder.typicode.com/todos/2");
+
+        Promise.allSettled([p1,p2]) // မှန်မှန်မှားမှာ result ပြန်ချင်ရင် allsettled သုံးလို့ရ
+        .then(data => {  // status => reject | fullfailed
+            console.timeLog('api')
+            console.log('Data ', data);
+        })
+
+        let p3 = fetch("https://jsonplaceholder.typicode.com/todos/3")
+                        .then(response=>response.json());
+        let p4 = fetch("https://jsonplaceholder.typicode.com/todos/4")
+                        .then(response=>response.json());
+
+        Promise.any([p3,p4])
+                .then(data => console.log("Any resolved", data));
+
+        
+        Promise.race([p3,p4])
+        .then(data => console.log("Any resolved", data)); // အရင်းပြီးတာ အရင်လုပ်
+
+        // any နဲ့ race သဘောတရားတူ
+        // any => fullfiled => success or reject
+        // race => success
+
+
+    </script>
+</body>
+</html>

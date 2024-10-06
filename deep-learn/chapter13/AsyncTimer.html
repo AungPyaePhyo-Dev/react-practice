@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function callback(retValue) {
+            console.log("Result from div ", retValue);
+        }
+        function division(a,b,cb) {
+            setTimeout(() => {
+                console.log("Computed division ", a/b);
+                cb(a/b);
+            }, 2000)
+        }
+        let result = division(10,2, callback);
+        
+        console.log("Done ", result); // undefined => problem
+
+        // callback will run later
+        // async လုပ်တဲ့ အခါ result ကချက်ချင်းမရ, async ပြီးသွားရင် ဘာလုပ်ပါလို့ပြောလိုက်တာက callback
+        // addEventListener တို့မှာထည့်တဲ့ကောင်ကလဲ callback
+        // node js call back (err, data)
+        
+
+    </script>
+</body>
+</html>

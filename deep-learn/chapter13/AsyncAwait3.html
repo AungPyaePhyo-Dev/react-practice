@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function getData() {
+            return 100;
+        }
+
+        // await or .then
+
+        getData()
+            .then(data => console.log("Data from get data ", data));
+
+    
+        function getPromise() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("Promise resolve");
+                    resolve(300);
+                }, 2000);
+            });
+        }
+
+        async function awaitPromise() {
+            let data = await getPromise();
+            console.log("After promise resolve ", data);
+        }
+
+        awaitPromise();
+    </script>
+</body>
+</html>
