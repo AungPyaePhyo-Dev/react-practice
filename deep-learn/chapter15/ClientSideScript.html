@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="clock"></div>
+    <span id="txtName"></span>
+    <button id="btnChange" type="button">Change</button>
+</body>
+<script>
+        document.getElementById("btnChange")
+                .addEventListener("click", () => {
+                    document.getElementById("txtName").innerText = "Hello";
+                })
+        setInterval(() => {
+            document.getElementById("clock").innerText = new Date();
+        }, 1000);
+</script>
+</html>

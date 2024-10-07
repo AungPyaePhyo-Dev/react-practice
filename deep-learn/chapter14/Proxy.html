@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            name: "AP",
+            order() {
+                console.log("Order Method")
+            },
+            invoice() {
+                console.log("Invoice Method");
+            }
+        }
+        let proxy = new Proxy(obj, {
+            get(target, prop, receiver) {
+                // console.log("target ", target, " prop ", prop, " receiver ", receiver);
+                if(typeof target[prop] == "function") {
+                    console.log("Method prop ", prop, " called.")
+                }
+                return target[prop];
+            }
+        });
+        proxy.invoice();
+        proxy.order();
+        console.log("Object.name ", obj.name);
+    </script>
+</body>
+</html>
