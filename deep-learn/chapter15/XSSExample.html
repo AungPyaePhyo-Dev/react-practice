@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>H1</h1>
+</body>
+<script>
+    let name =  new URL(document.URL).searchParams.get("name");
+    document.querySelector('h1').innerHTML = "Hello " + name;
+    // XSSExample.html?name=<img%20onerror=%27alert("Hello")%27%20src="x.jpg"/>
+    //  Best Practice အရ innerHTML မသုံးသင့်
+</script>
+</html>
