@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container {
+        height: 150px;
+        border:1px solid green;
+    }
+
+    #childContainer {
+        height: 100px;
+        border:1px solid red;
+    }
+
+</style>
+<body>
+    <div id="container" class="my-container">
+        container
+        <div id="childContainer">
+            child container
+            <h1>First h1 container</h1>
+        </div>
+        <h1>H1 uner container</h1>
+    </div>
+    <span class="my-container">
+        span element
+    </span>
+    <span class="my-container">
+        span element 2
+    </span>
+    <button class="my-container" id="btnRemove" type="button">Remove</button>
+</body>
+<script>
+    console.log("querySelector div~span ", document.querySelectorAll('div~span')); // simbling container / div နောက်မှာပါတဲ့ span အားလုံး
+    // ol li တွေမှာဆို အသုံးတည့်
+    console.log("querySelector div~span ", document.querySelectorAll('div+span')); // immediate container / div နောက်မှာကပ်လျှက်ပါတဲ့  span
+</script>
+</html>

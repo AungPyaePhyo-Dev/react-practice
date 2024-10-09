@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container {
+        height: 150px;
+        border:1px solid green;
+    }
+
+    #childContainer {
+        height: 100px;
+        border:1px solid red;
+    }
+
+</style>
+<body>
+    <div id="container" class="my-container">
+        container
+        <div id="childContainer">
+            child container
+            <h1>First h1 container</h1>
+        </div>
+        <h1>H1 uner container</h1>
+    </div>
+    <h1>Another</h1>
+    <span class="my-container">
+        second container
+    </span>
+    <button class="my-container" id="btnRemove" type="button">Remove</button>
+</body>
+<script>
+    console.log("querySelector ", document.querySelector('div')); // css selector
+    console.log("querySelector ", document.querySelectorAll('div'));
+
+    console.log("querySelector .my-container ", document.querySelectorAll('.my-container'));
+    console.log("querySelector div.my-container ", document.querySelectorAll('div.my-container'));
+
+    console.log("querySelector #container ", document.querySelectorAll('#container'));
+
+    // getElementById သုံးသင့်
+
+    console.log("getElementById container ", document.getElementById("container"));
+
+    console.log('querySelectorAll div h1', document.querySelectorAll('div h1'));
+    console.log('querySelectorAll div>h1', document.querySelectorAll('div>h1'));
+</script>
+</html>

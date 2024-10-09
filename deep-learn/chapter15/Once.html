@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container {
+        height: 150px;
+        border:1px solid green;
+    }
+
+    #childContainer {
+        height: 100px;
+        border:1px solid red;
+    }
+
+</style>
+<body>
+    <div id="container">
+        container
+        <div id="childContainer">
+            child container
+        </div>
+    </div>
+    <button id="btnRemove" type="button">Remove</button>
+</body>
+<script>
+
+        document.getElementById("childContainer")
+                .addEventListener("click", function(event) {
+                    console.log("Clicked Child Container ", event, event.target == this);
+                    // event.stopPropagation();
+                }, {
+                    once: true
+                });
+        function handler(event) {
+            console.log("Container Click");
+        }
+        document.getElementById("container")
+                .addEventListener("click", handler);
+
+        document.getElementById("btnRemove")
+                .addEventListener("click", () =>{
+                    document.getElementById("container")
+                            .removeEventListener("click", handler);
+                })
+</script>
+</html>

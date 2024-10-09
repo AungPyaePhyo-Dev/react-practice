@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container {
+        height: 150px;
+        border:1px solid green;
+    }
+
+    #childContainer {
+        height: 100px;
+        border:1px solid red;
+    }
+
+</style>
+<body>
+    <div id="container">
+        container
+        <div id="childContainer">
+            child container
+        </div>
+    </div>
+</body>
+<script>
+        // event bubbling => bottom to top
+        // capturing => top to bottom
+        document.addEventListener('click', function(event) {
+            console.log("Document clicked", event, event.target == this);
+        }, {
+            capture: true
+        })
+
+        document.getElementById("container")
+                .addEventListener("click", function(event) {
+                    console.log("Clicked Container ", event, event.target == this);
+                    // event.stopImmediatePropagation();
+                }, {
+                    capture: true
+                });// target ကိုစစ်လို့ရ
+
+        document.getElementById("childContainer")
+                .addEventListener("click", function(event) {
+                    console.log("Clicked Child Container ", event, event.target == this);
+                    // event.stopPropagation();
+                }, {
+                    capture: true
+                });
+
+
+        document.getElementById("container")
+                .addEventListener("click", function(event) {
+                    console.log("Clicked Handler 1 ", event, event.target == this);
+                }, {
+                    capture: true
+                });//
+</script>
+</html>
