@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" value="textbox 1">
+        <br>
+        <input type="text" value="textbox 2">
+        <br>
+        <textarea name="">textarea 3</textarea>
+        <br>
+        <input type="button" value="Button label">
+    </form>
+    <h1>First Child</h1>
+    <h1>Last Child</h1>
+    <h2>H2 </h2>
+</body>
+<script>
+    console.log("Textbox querySelector ", document.querySelectorAll('input[type="text"]'));
+    console.log("Textbox querySelector h1:first-child", document.querySelectorAll('h1:first-child'));
+    console.log("Textbox querySelector h1, h2", document.querySelectorAll('h1, h2'));
+</script>
+</html>
