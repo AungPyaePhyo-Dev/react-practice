@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .colored-container {
+        background-color: grey;
+    }
+    .highlight {
+        color: green;
+        background-color: gray;
+    }
+
+    #container {
+        width: 300px;
+        height: 200px;
+    }
+</style>
+<body>
+    <ul id="lstItem">
+        <li data-section-no="1">Item 1</li>
+        <li data-section-no="2">Item 2</li>
+        <li data-section-no="3">Item 3</li>
+    </ul>
+    <div id="container">
+        container
+    </div>
+    <button type="button" id="btnAddClass">Add </button>
+    <button type="button" id="btnRemoveClass">Remove </button>
+</body>
+<script>
+    document.getElementById('btnAddClass')
+            .addEventListener('click', () => {
+                let container = document.getElementById('container');
+                container.classList.add('colored-container');
+            })
+
+    document.getElementById('btnRemoveClass')
+            .addEventListener('click', () => {
+                let container = document.getElementById('container');
+                container.classList.remove('colored-container');
+            })
+
+    document.getElementById('lstItem')
+            .addEventListener('mouseover', () => {
+                console.log("mouseover");
+                event.target.closest('li').classList.add('highlight');
+            });
+
+    document.getElementById('lstItem')
+            .addEventListener('mouseout', () => {
+                event.target.closest('li').classList.remove('highlight');
+            });
+
+    document.getElementById('lstItem')
+            .addEventListener('click', () => {
+                let item = event.target.closest('li');
+                let data = item.dataset.sectionNo; // - to camalCase
+                console.log("Click on data ", data);
+            });
+</script>
+</html>

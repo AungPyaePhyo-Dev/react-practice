@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>One</h1>
+    </div>
+    <button type="button" id="btnAdd">Add</button>
+</body>
+<script>
+    // Event Loop
+    // Call Stack Busy
+    // No Event Handler can fire
+
+   document.addEventListener('click', (event) => {
+    console.log("Document click");
+   });
+
+   document.getElementById("btnAdd")
+            .addEventListener("click", (event) => {
+                console.log("add h1");
+                // for(let i = 0; i < document.getElementsByTagName('h1').length; i++) { // infinite loop // problem 
+                for(let i = 0, len = document.getElementsByTagName('h1').length; i < len; i++) { // infinite loop
+                    let element = document.createElement('h1');
+                    element.innerText = "New h1";
+                    document.getElementById("container")
+                            .appendChild(element);
+                }
+            })
+</script>
+</html>

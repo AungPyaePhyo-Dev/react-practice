@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #myImg {
+        width: 200px;
+        height: 200px;
+    }
+</style>
+<body>
+    <img src="" id="myImg">
+</body>
+<script>
+    let images = [
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtGyJ5jeZOAM3k8xuoVSitUOfxZ6Ixls-B7A&s',
+        'https://cdn-icons-png.flaticon.com/512/0/747.png',
+        'https://instantlogodesign.com/blog/wp-content/uploads/2022/04/Old-Xiaomi-logo-1.jpg'
+    ];
+    let i = 0;
+    setInterval(() => {
+        let myImage = document.getElementById('myImg');
+        i++;
+        // console.log("i " ,i, " images.length ", images.length, i % images.length);
+        myImage.src = images[i%images.length]; // 1,2,0
+    },1000);
+</script>
+</html>

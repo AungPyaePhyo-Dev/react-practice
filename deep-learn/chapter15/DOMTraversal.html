@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #myImg {
+        width: 100px;
+        height: 100px;
+    }
+</style>
+<body>
+    <img src="" id="myImg">
+    <h1>Previous Sibling</h1>
+    <div id="container">
+        <div>First Child</div>
+        <div>Second Child</div>
+        hello
+    </div>
+    <h1>first</h1>
+    <h1 class="my-container">second</h1>
+    <h2>H2</h2>
+    <button type="button" id="btnAddSrc">Add Src</button>
+</body>
+<script>
+    let container = document.getElementById('container');
+    console.log("Parent Node", container.parentNode)
+    console.log("children", container.children)
+    console.log("childNotes", container.childNotes)
+    console.log("childElementCount", container.childElementCount)
+    console.log("firstChild", container.firstChild)
+    console.log("lastChild", container.lastChild)
+    console.log("firstElementChild", container.firstElementChild)
+    console.log("lastElementChild", container.lastElementChild)
+
+    console.log("nextElementSiblings", container.nextElementSibling)
+    console.log("previousElementSibling", container.previousElementSibling)
+
+    document.getElementById("btnAddSrc")
+            .addEventListener('click', (event) => {
+                let myImage = document.getElementById("myImg");
+                myImage.src = 'https://cdn-icons-png.flaticon.com/512/0/747.png'; // add attribute
+                // image slider တွေမှာ သုံးလို့ရ
+            })
+
+</script>
+</html>
