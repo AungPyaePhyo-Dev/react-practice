@@ -10,6 +10,7 @@
         container
     </div>
     <button type="button" id="btnUpdate">Update</button>
+    <button type="button" id="btnInsert">Insert</button>
 </body>
 <script>
     document.getElementById("btnUpdate")
@@ -19,6 +20,16 @@
                 // container.innerHTML = "<h1>hello world</h1>"; // XSS Attack တွေဖြစ်တတ်
                 // container.outerText = "Update"; // container ကို replace လုပ်
                 container.outerHTML = "<span>Updated</span>"; // container ကို replace လုပ်
-            })
+            });
+
+    document.getElementById('btnInsert')
+             .addEventListener('click', (event) => {
+                    console.log("Btn Insert Clicked");
+                    let container = document.getElementById('container');
+                    // container.insertAdjacentHTML('beforebegin', '<h1>Added</h1');
+                    // container.insertAdjacentHTML('afterbegin', '<h1>Added after </h1');
+                    // container.insertAdjacentHTML('beforeend', '<h1>Added</h1');
+                    container.insertAdjacentHTML('afterend', '<h1>Added</h1');
+             });
 </script>
 </html>

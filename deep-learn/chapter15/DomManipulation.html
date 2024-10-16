@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        container
+    </div>
+    <button type="button" id="btnAdd">Add</button>
+    <button type="button" id="btnDelete">Remove</button>
+</body>
+<script>
+    // Remove လုပ်တဲ့အခါ data ကျန်ခဲ့ရင် Memory Leak ဖြစ်နိုင်
+    let container = document.getElementById('container');
+   document.getElementById('btnAdd')
+            .addEventListener('click', (event) => {
+                console.log('btnAdd Event');
+                let h1 = document.createElement('h1');
+                h1.textContent = "This is h1 by JS";
+                // container.append(h1); 
+                // container.prepend(h1); // inside container 
+                // container.after(h1); // outside of container
+                container.before(h1); // outside of container
+            });
+
+    document.getElementById('btnDelete')
+             .addEventListener('click', (event) => {
+                container.remove();
+             });
+</script>
+</html>
