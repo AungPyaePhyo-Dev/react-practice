@@ -5,7 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .color-container {
+        background-color: grey;
+        color: red;
+    }
+
+    #container {
+        height: 200px;
+        width: 200px;
+    }
+</style>
 <body>
-    
+    <div id="container"
+        style="color: green;"
+        class="color-container"
+    >
+        container
+    </div>
+    <button type="button" id="btnUpdate">Update</button>
+    <button type="button" id="btnGetStyle">Get Style</button>
 </body>
+<script>
+    // page reflow
+    // root dom tree ကိုထိ
+    // use minimum select
+    // 
+    let container = document.getElementById('container');
+    document.getElementById('btnUpdate')
+            .addEventListener("click", (event) => {
+                console.log("btn update");
+                // container.style.color = "blue";
+                // container.style.width = "100px";
+                let styles = "color:blue;width:100px";
+                container.style.cssText = styles; // page reflow only one time and better performance
+            });
+
+    document.getElementById("btnGetStyle")
+             .addEventListener("click", (event) => {
+                let container = document.getElementById("container");
+                let styles = window.getComputedStyle(container);
+                console.log("Styles", styles); // parent property တွေရောပါ ပါလာ
+             });
+</script>   
 </html>

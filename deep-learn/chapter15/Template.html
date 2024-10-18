@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template id="row">
+        <tr>
+            <td>1</td>
+            <td>One</td>
+        </tr>
+    </template>
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>One</td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" id="btnAdd">Add</button>
+</body>
+<script>
+    // Shadow DOM Vs Virtual DOM
+    // Shadow DOM works below DOM
+    document.getElementById('btnAdd')
+            .addEventListener('click', (event) => {
+                console.log('append');
+                let template = document.querySelector("#row");
+                let tableBody = document.querySelector("tbody");
+                let clone = template.content.cloneNode(true);
+                tableBody.append(clone);
+            })
+</script>
+</html>

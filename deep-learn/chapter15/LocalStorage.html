@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // city, township => storage cache
+    let username = localStorage.username;
+    // object ကို သိမ်းလို့မရ
+    // သိမ်းချင်တယ်ဆို obj ကို string ပြောင်းပြီးသိမ်းလို့ရ
+
+    let obj = localStorage.obj;
+    if(!obj) {
+        obj = {
+            name : "AP",
+            age : 27
+        }
+        localStorage.obj = JSON.stringify(obj);
+    }else {
+        obj = JSON.parse(obj);
+        console.log("obj ", obj);
+    }
+    if(!username) {
+        username = prompt("Enter your name");
+        localStorage.username = username;
+        localStorage.age = 20;
+        console.log('age ', typeof localStorage.age)
+    }else {
+        console.log('username ', username);
+        // localStorage.clear();
+    }
+
+    // cross tags
+    window.addEventListener('storage', (event) => {
+        console.log("Event ", event);
+    })
+
+
+</script>
+</html>
