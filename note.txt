@@ -1,0 +1,22 @@
+RDBMS
+    rows,columns
+Banking => Oracle ( Cost )
+SQL => sequel => structure query language
+    Cons => not good scaling
+            scaling =>
+                    horizontal scaling => small instances ( not good )
+                    vertical scaling => single resource + more resource
+            single insert - many updates
+            
+NoSQL => good in horizontal scaling
+            single insert - many read
+            - store the whole json
+            - document oriented 
+
+            Redis, MamCache 
+            MongoDB
+                - give async
+                - frontend js
+                - backend js 
+                - db js
+                - ODM - 
