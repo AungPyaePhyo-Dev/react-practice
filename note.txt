@@ -19,4 +19,44 @@ NoSQL => good in horizontal scaling
                 - frontend js
                 - backend js 
                 - db js
-                - ODM - 
+                - ODM - Object Document Mapping
+
+GraphDatabase => Neo4j (Tree)
+              => သန်ခေါင်စားရင်းကောက်တဲ့အခါ အမျိုးတော်တာတွေကြည့်ဖို့
+              
+
+req,res,next => middleware in express
+                next
+                - next က path တူတဲ့ same route ကိုသွားခိုင်း eg - dummy route
+
+Mongoose Vs Prisma
+            - Mongoose for Mongo
+            - Prisma for both mongo and mysql
+
+Mongo
+=====
+        npm install mongoose --save
+        package.json => mongoose
+        connection string => mongodb://localhost:27017/express_test , localhost => ip, 27017 => port, express_test => db name
+
+
+Express Workflow
+        route
+            controller
+                service
+                    model
+                    service က return ပြန်တဲ့ဟာ ကို controller ကနေ await လုပ်ရမယ်။
+
+Mongo
+    Embedded Model
+        Movie
+            Actor
+
+    - One to One
+    - Embedded Model - need more space
+    - Refrence Model ( RDBMS ) - need to join
+    -
+
+
+
+
