@@ -60,3 +60,211 @@ Mongo
 
 
 
+application
+    - security
+    - authentication ( valid the system user )
+        - login
+        - device ( finger print)
+        - username, password
+        - multi factor authentication
+
+    - authorization
+        - do user have correct acceess to system resource
+        
+
+encoding
+    - plain text to other
+
+decoding
+    - other to plain text
+
+So, it's called two way
+Encoding is not secure
+
+id ကို မမြင်စေချင်တဲ့ အခါမျိုးမှာ base 64 ကိုသုံးလို့ရ
+binary to plain text
+
+hashing
+    one way
+    plain text => hash 
+
+    md5 hash 
+    sha1
+
+    irreversible => ပြောင်းပြန် လှန်လို့မရ
+
+    login
+        => username - admin
+        => password - admin => database မှာ မြင်နေ
+        => hash => password = 
+
+    rainbow table attack 
+        => dictionary => General password list
+        => site weak password ဆို မထားဖို့ ပြောတာ rainbow table attack ကြောင့်
+        => Bruce Force Attack 
+
+    salt 
+        => hash(password + secret key)
+
+encrypt/decrypt
+    - algorithm, key
+
+symmetric encryption ( same key )
+==================================
+
+encrypt 
+    - algorithm(plaintext, key) => encrypted text
+
+decrypt
+    - algorithm(encryptedtext, key) => plain text
+
+
+asymmetric encryption ( 2 key )
+==============================
+
+    public key
+        encrypt 
+
+    private key
+        decrypt
+
+    
+https 
+    public key, private key => certificate
+
+
+token base authentication
+=======================
+
+login 
+    api/auth 
+        usernmae, password
+            token
+    api/movies {
+        username,
+        password 
+    }
+    // DB ကို နှေးစေတယ် 
+
+
+    api/movie {
+        authentication: Bearer token
+    }
+    // Fast, Scalable, 
+
+    access token ( 3 mins expire )
+    refresh token  ( after expired used )
+
+    OAuth Authentication - JWT Token
+    IAM ( Google, Facebook ) - Third Party
+
+    JWT ( Json Web Token )  - jwt.io
+    ====================
+
+    . နဲ့ ခွဲပြီးတော့ သုံးပိုင်းပါ
+
+    header => ဘယ် algorithm သုံးထားတယ်ဆိုတာပြော 
+    payload => base 64 encode လုပ်ထား ( လူတိုင်းဖတ်လို့ရ )
+    signature =>  HMASHA256 hash ( header + payload + secret key ) => login မှာ salt ထည့်လိုက်သလို ( secure ဖြစ်သွား )
+
+    we can read data from payload
+    payload => user_id, role
+
+    login 
+        => username, password => ok => token 
+
+    api 
+        => token 
+        => token verification 
+
+    in memory သွားလို့ရ, DB ကို ထိဖို့မလို 
+
+
+Express 
+    Middleware Concept
+    Next ဆို နောက်ကိုသွား 
+
+    request
+        jwt authentication
+            ok  
+            next() 
+
+
+Authentication
+    package => jsonwebtoken, bcrypt
+    npm install
+
+XML
+    start tag && end tag
+
+Component
+    - reuse လုပ်လို့ရလေ ကောင်းလေ
+    - do not nest definition ( Component အသစ်ပြန်ဖြစ်လို့ )
+    - JS 
+    - HTML Market => JSX ( XML )
+    - HTML => case insensitive , JSX => case sensitive, single root
+    - 
+    
+    - jsx class not use ( js keyword ) => className
+    - HTML to JSX => transform.tools -> html to jsx
+
+    - virtual dom => compile
+    - Child() 
+        - virtual dom node
+        - plain json 
+        {
+            props :
+                    children
+
+        }
+        - renderer -> virtual dom difference
+                        web , webUI
+        - react native -> mobile element render 
+        => difference rendrer ( layouts.js )
+        - bable js compiler
+        - Json Tree => virtual dom ( not real dom )
+        - React Dom => Page Reflow
+        - 
+
+        - value => expression
+        - statement => if, for 
+
+        - style => double curley {{  }}    
+
+    
+        React မှာ map ပတ်တဲ့ အခါ Key ရှိရမယ်
+        Virtual DOM ကြောင့်,  Recognition လုပ်တဲ့အခါ အဲ့ key ကမြန်အောင်လုပ်ပေး
+
+        Component => UI => View
+        Business Logic သည် view မှာမရှိသင့်
+
+        reusable design => props ပါ
+        1. List Internal မဖြစ်ရ
+        2. logic ကို render ပဲလုပ်
+        3. container Component မှာပဲ Business Logic ရေး
+
+
+        React Component #################################
+        Reusable ဖြစ်အောင်ရေးဖို့ဆို SRP Rule ကို လိုက်နာရမယ်
+
+        key => id or crypto uuid
+
+        map should have in jsx => easy to read
+
+        Pure => input output ပဲရှိတဲ့ compoonent ( input => props, output => jsx) 
+             => side effect မပါ ရင် pure ဖြစ် => Good to test 
+
+        React is over Virtual DOM
+            Never use Native DOM
+
+        Recocilation Algorithm
+
+        onclick={handler} => function pass လုပ်ပေး ပြီး event ကို ဖမ်း
+                            => first class function တွေဖြစ်လို့ function ကို pass လုပ်လို့ရ 
+
+        
+
+
+
+
+        
