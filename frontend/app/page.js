@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image";
 import styles from "./page.module.css";
 import HelloWorld from "./components/HelloWorld"; // default import
@@ -8,6 +9,13 @@ import Border from "./components/Border";
 import User from "./components/User";
 import ListDemo from "./components/ListDemo";
 import EventDemo from "./components/EventDemo";
+import ContextMenu from "./components/ContextMenu";
+import Counter from "./components/Counter";
+import ImmutableState from "./components/ImmutableState";
+import BatchUpdate from "./components/BatchUpdate";
+import ListUpdate from "./components/ListUpdate";
+import DeepObjectState from "./components/DeepObjectState";
+import CustomTab from "./components/CustomTab";
 
 export default function Home() {
   let size = {
@@ -53,7 +61,18 @@ export default function Home() {
           <User admin />
           {/* <User admin={false} /> */}
           {/* <ListDemo  todos={items}/> */}
-          <EventDemo />
+          {/* <EventDemo />
+          <ContextMenu /> */}
+          {/* <Counter /> */}
+          {/* <ImmutableState/> */}
+          {/* <BatchUpdate /> */}
+          {/* <ListUpdate /> */}
+          {/* <DeepObjectState /> */}
+          <CustomTab headers={["Tab1", "Tab2", "Tab3"]} >
+              <div>Page 1</div>
+              <div>Page 2</div>
+              <div>Page 3</div>
+          </CustomTab>
       </main>
     </div>
   );

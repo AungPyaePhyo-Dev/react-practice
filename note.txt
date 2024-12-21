@@ -262,6 +262,45 @@ Component
         onclick={handler} => function pass လုပ်ပေး ပြီး event ကို ဖမ်း
                             => first class function တွေဖြစ်လို့ function ကို pass လုပ်လို့ရ 
 
+
+        Event Propagation => bubbling => stop Propagation ဆက်မသွား
+
+        State 
+        ================
+        If state changes, the component will render 
+            useState => getter(immutable), setter ( to change state)
+        use => Hook ( can use functional components)
+        const => property
+        change => state ( across the render - persist)
+
+        Next JS => check pure function => run twice
+             => to close => next.config.js => nextConfig => reactStrictMode : false
+
+        state => private on each component
+
+        react =>  (price * qty) = total => if you change price or quty => total is auto change
+
+        check state change
+            => === triple equal ( refrence equality )
+            => object => change object refrence
+            => primitive => change value
+
+        Re render
+            parent render => child auto render 
+
+        Page Reflow
+            => browser geometry calculate 
+
+        nested object => can use immer 
+
+        
+
+
+
+
+        
+
+
         
 
 
