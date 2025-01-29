@@ -293,7 +293,44 @@ Component
 
         nested object => can use immer 
 
-        
+        simbling => can not communicate
+
+
+    Form 
+    ======
+    formik, hookform
+    state => single source of true
+    button submit => get from state, don't get from input
+    total => derived state => already have data calculate
+    state structure 
+    
+    to get value => onChangeHandler() => get
+
+    toggle => onState offState ( don't ) => toggleState( do ) 
+
+    normalization => redux
+    
+    simbling shared => set data in parent 
+    property => parent to child data pass
+
+    communication three types 
+
+    parent to child => props
+    child to parent => props with handler function
+    child to child => child to parent and parent state change then pass with props
+
+
+    Design Thinking
+    =============
+    UI Draft layouts
+        static layout 
+            property 
+                dummy data
+    Data Flow 
+        state / callback
+
+    
+
 
 
 

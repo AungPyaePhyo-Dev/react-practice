@@ -16,6 +16,9 @@ import BatchUpdate from "./components/BatchUpdate";
 import ListUpdate from "./components/ListUpdate";
 import DeepObjectState from "./components/DeepObjectState";
 import CustomTab from "./components/CustomTab";
+import FormDemo from "./components/form/FormDemo";
+import "bootstrap/dist/css/bootstrap.css";
+import TodoContainer from "./components/todos/TodoContainer";
 
 export default function Home() {
   let size = {
@@ -68,11 +71,17 @@ export default function Home() {
           {/* <BatchUpdate /> */}
           {/* <ListUpdate /> */}
           {/* <DeepObjectState /> */}
-          <CustomTab headers={["Tab1", "Tab2", "Tab3"]} >
-              <div>Page 1</div>
+          {/* <CustomTab headers={["Tab1", "Tab2", "Tab3"]} >
+              <div
+                style={{
+                  color: "red",
+                }}
+              >Page 1</div>
               <div>Page 2</div>
               <div>Page 3</div>
-          </CustomTab>
+          </CustomTab> */}
+          {/* <FormDemo /> */}
+          <TodoContainer />
       </main>
     </div>
   );
